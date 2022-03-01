@@ -344,7 +344,7 @@ int main()
         q.pop();  //把第m个元素删掉
         cnt ++;
     }
-    cout << q.front();//删完n-1个元素，队列里剩下的就是最后一个元素
+    cout << q.front() << endl;//删完n-1个元素，队列里剩下的就是最后一个元素
     return 0;
 }
 
@@ -368,7 +368,7 @@ int main()
 //     }
 // };
 
-// //2.链表模拟过程
+//2.链表模拟过程
 // #include <list>
 // class Solution {
 // public:
