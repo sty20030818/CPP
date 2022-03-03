@@ -701,13 +701,72 @@
 // }
 
 
+// #include<bits/stdc++.h>
+// using namespace std;
+// int a[300];
+// char s[100100];
+// int len,i;
+
+// int main()
+// {
+//     memset(a,0,sizeof(a));
+//     scanf("%s",s);
+//     len=strlen(s);
+//     for(i=0;i<len;i++)
+//         a[s[i]]++;
+//     for(i=0;i<len;i++)
+//         if(a[s[i]]==1)
+// 		{
+//             printf("%c",s[i]);
+//             return 0;
+//         }
+//     printf("no");
+//     return 0;
+// }
+
+// #include <bits/stdc++.h>
+// using namespace std;
+// int main( )
+// {
+// 	int a[100],i=1;
+// 	char x[10000];
+// 	memset(a,0,sizeof(a));
+// 	while((x[i]=getchar())!='\n')
+// 	{
+// 		a[x[i]-'a']++;
+// 		i++;
+// 	}
+// 	for(i=0;i<26;i++)
+// 	{
+// 		if(a[i]==1)
+// 		{
+// 			printf("%c",x[i]);
+// 			return 0;
+// 		}
+// 	}
+// 	cout<<"no";
+
+// 	return 0;
+// }
+
+
 #include<bits/stdc++.h>
 using namespace std;
 
 int main()
 {
-	int a;
-	cin >> a;
-	cout << a;
-	return 0;
+	// stu[1].id=1;
+	// stu[1].score=50;
+	// stu[2].id=2;
+	// stu[2].score=100;
+
+	// swap(stu[1],stu[2]);
+	// cout <<stu[1].id << endl;
+	// cout <<stu[1].score << endl;
+	// cout <<stu[2].id << endl;
+	// cout <<stu[2].score << endl;
+	int minn = 0x7FFFFFFF;
+	cout << minn << endl;
+	cout << INT_MAX;
+    return 0;
 }
