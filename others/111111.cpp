@@ -750,23 +750,45 @@
 // }
 
 
-#include<bits/stdc++.h>
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// int main()
+// {
+// 	// stu[1].id=1;
+// 	// stu[1].score=50;
+// 	// stu[2].id=2;
+// 	// stu[2].score=100;
+
+// 	// swap(stu[1],stu[2]);
+// 	// cout <<stu[1].id << endl;
+// 	// cout <<stu[1].score << endl;
+// 	// cout <<stu[2].id << endl;
+// 	// cout <<stu[2].score << endl;
+// 	int minn = 0x7FFFFFFF;
+// 	cout << minn << endl;
+// 	cout << INT_MAX;
+//     return 0;
+// }
+
+#include <iostream>
 using namespace std;
+struct node
+{
+    int score;
+    char name[30];
+}
+stu[110];
 
 int main()
 {
-	// stu[1].id=1;
-	// stu[1].score=50;
-	// stu[2].id=2;
-	// stu[2].score=100;
-
-	// swap(stu[1],stu[2]);
-	// cout <<stu[1].id << endl;
-	// cout <<stu[1].score << endl;
-	// cout <<stu[2].id << endl;
-	// cout <<stu[2].score << endl;
-	int minn = 0x7FFFFFFF;
-	cout << minn << endl;
-	cout << INT_MAX;
+    int n,i,k,max=-1;
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+	{
+        scanf("%d%s",&stu[i].score,stu[i].name);
+        if(stu[i].score>max) k=i,max=stu[i].score;
+    }
+    printf("%s",stu[k].name);
     return 0;
 }
