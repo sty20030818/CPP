@@ -8,6 +8,15 @@ bool isPrime(int shu)
 	if(shu==2||shu==3) return true;
 	if(shu%6!=1&&shu%6!=5) return false;
 	for(int i=5;i<=n_sqrt;i+=6)
-	    if(shu%i==0||shu%(i+2)==0) return false;
-    return true;
+		if(shu%i==0||shu%(i+2)==0) return false;
+	return true;
+}
+
+int main()
+{
+	int a;
+	cin >> a;
+	if(isPrime(a)) cout << "YES" << endl;
+	else cout << "NO" << endl;
+	return 0;
 }

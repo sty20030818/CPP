@@ -771,24 +771,55 @@
 //     return 0;
 // }
 
+// #include <iostream>
+// using namespace std;
+// struct node
+// {
+//     int score;
+//     char name[30];
+// }
+// stu[110];
+
+// int main()
+// {
+//     int n,i,k,max=-1;
+//     scanf("%d",&n);
+//     for(i=1;i<=n;i++)
+// 	{
+//         scanf("%d%s",&stu[i].score,stu[i].name);
+//         if(stu[i].score>max) k=i,max=stu[i].score;
+//     }
+//     printf("%s",stu[k].name);
+//     return 0;
+// }
+
+
 #include <iostream>
+#include <algorithm>
 using namespace std;
+
 struct node
 {
+    string name;
     int score;
-    char name[30];
+    int note;
+}stu[101];
+
+bool cmp(const node&x,const node&y)
+{
+    return x.score < y.score;
 }
-stu[110];
 
 int main()
 {
-    int n,i,k,max=-1;
-    scanf("%d",&n);
-    for(i=1;i<=n;i++)
-	{
-        scanf("%d%s",&stu[i].score,stu[i].name);
-        if(stu[i].score>max) k=i,max=stu[i].score;
-    }
-    printf("%s",stu[k].name);
+    int a;
+    cin >> a;
+    for(int i=0;i<a;i++)
+        cin >> stu[i].name >> stu[i].score;
+
+    sort (stu,stu+a,cmp);
+
+    for(int i=0;i<a;i++)
+        cout << stu[i].name << stu[i].score;
     return 0;
 }
