@@ -794,32 +794,134 @@
 // }
 
 
-#include <iostream>
-#include <algorithm>
+// #include <iostream>
+// #include <algorithm>
+// using namespace std;
+
+// struct node
+// {
+//     string name;
+//     int score;
+//     int note;
+// }stu[101];
+
+// bool cmp(const node&x,const node&y)
+// {
+//     return x.score < y.score;
+// }
+
+// int main()
+// {
+//     int a;
+//     cin >> a;
+//     for(int i=0;i<a;i++)
+//         cin >> stu[i].name >> stu[i].score;
+
+//     sort (stu,stu+a,cmp);
+
+//     for(int i=0;i<a;i++)
+//         cout << stu[i].name << stu[i].score;
+//     return 0;
+// }
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// int main()
+// {
+//     char a[100], b[100], c[100];
+//     int a1[100], b1[100], c1[100];
+//     int i, lena, lenb, lenc;
+
+//     memset(a, 0, sizeof(a)); //数组清零
+//     memset(b, 0, sizeof(b));
+//     memset(c, 0, sizeof(c));
+
+//     cin >> a >> b;
+
+//     lena = strlen(a);
+//     lenb = strlen(b);
+//     if (lena < lenb || (lena == lenb && strcmp(a, b) < 0)) //如果存在a<b的情况，提负号
+//     {
+//         swap(a, b);
+//         cout << "-";
+//     }
+
+//     swap(lena,lenb);
+
+//     for (i = 0; i <= lena - 1; i++) //字符串倒序
+//         a1[i] = a[lena - i - i] - '0';
+//     for (i = 0; i <= lenb - 1; i++)
+//         b1[i] = b[lenb - i - 1] - '0';
+
+//     for (i = 1; i <= lena; i++) //不够的借位
+//     {
+//         if (a1[i] < b1[i])
+//         {
+//             a1[i] += 10;
+//             a1[i - 1]--;
+//         }
+//         c1[i] = a1[i] - b1[i];
+//     }
+
+//     lenc = i;
+
+//     for (i = lenc - 1; i >= 0; i--) //处理前导零问题
+//     {
+//         if (c1[i] == 0 && lenc > 1) lenc--;
+//         else break;
+//     }
+
+//     for (i = lenc - 1; i >= 0; i--) //倒序输出
+//         cout << c1[i];
+//     return 0;
+// }
+#include <bits/stdc++.h>
 using namespace std;
-
-struct node
-{
-    string name;
-    int score;
-    int note;
-}stu[101];
-
-bool cmp(const node&x,const node&y)
-{
-    return x.score < y.score;
-}
-
 int main()
 {
-    int a;
-    cin >> a;
-    for(int i=0;i<a;i++)
-        cin >> stu[i].name >> stu[i].score;
-
-    sort (stu,stu+a,cmp);
-
-    for(int i=0;i<a;i++)
-        cout << stu[i].name << stu[i].score;
+    char a[100], b[100];
+    int a1[100], b1[100], c1[100], i, lena, lenb, lenc;
+    memset(a1, 0, sizeof(a1)); //数组清零
+    memset(b1, 0, sizeof(b1));
+    memset(c1, 0, sizeof(c1));
+    gets(a);
+    gets(b);
+    lena = strlen(a);
+    lenb = strlen(b);
+    if (lena < lenb || (lena == lenb && (strcmp(a, b) < 0))) //如果存在a<b的情况，提负号
+    {
+        swap(lena, lenb);
+        cout << "-";
+    }
+    for (i = 0; i <= lena - 1; i++) //字符串倒序
+    {
+        a1[i] = a[lena - i - i] - '0';
+    }
+    for (i = 0; i <= lenb - 1; i++)
+    {
+        b1[i] = b[lenb - i - 1] - '0';
+    }
+    for (i = 0; i <= lena; i++) //不够的借位
+    {
+        if (a1[i] < b1[i])
+        {
+            a1[i] += 10;
+            a1[i - 1]--;
+        }
+        c1[i] = a1[i] - b1[i];
+    }
+    lenc = i;
+    for (i = lenc - 1; i >= 0; i--) //处理前导零问题
+    {
+        if (c1[i] == 0 && lenc > 1)
+            lenc--;
+        else
+            break;
+    }
+    for (i = lenc - 1; i >= 0; i--) //倒序输出
+    {
+        cout << c1[i];
+    }
     return 0;
 }
