@@ -44,6 +44,7 @@
 		else
 			return i+1;
 	}
+
 	int InsElem(SeqList *L,int i,DataType x)
 	{
 		int j;
