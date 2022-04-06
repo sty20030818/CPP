@@ -8,6 +8,7 @@
 		"files.associations": {
 			"iostream": "cpp",
 			"algorithm": "cpp"
-		}
+		},
+		"files.autoGuessEncoding": true
 	}
 }
